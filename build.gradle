@@ -1,0 +1,34 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.irinatest'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'com.codeborne:selenide:6.5.1'
+	testImplementation 'com.codeborne:selenide:6.5.1'
+	implementation("org.testng:testng:7.6.0")
+	testImplementation("org.testng:testng:7.6.0")
+	//compile group: 'io.qameta.allure', name: 'allure-selenide', version: '2.0-BETA22'
+}
+
+test {
+	useTestNG()
+}

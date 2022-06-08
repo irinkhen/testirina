@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Req" verbose="1" parallel="classes" thread-count="3">
+    <test name="Create requests">
+        <classes>
+            <class name="com.irinatest.test.ui.user.RegistrationPageTest"/>
+            <class name="com.irinatest.test.ui.user.PersonDataTest"/>
+            <class name="com.irinatest.test.ui.user.MarriageServiceTest"/>
+            <class name="com.irinatest.test.ui.user.BirthServiceTest"/>
+            <class name="com.irinatest.test.ui.user.DeathServiceTest"/>
+            <class name="com.irinatest.test.ui.user.StatusTest"/>
+        </classes>
+    </test>
+
+</suite>
