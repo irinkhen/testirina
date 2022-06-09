@@ -1,6 +1,7 @@
 package com.irinatest.test.common.pageobjects.user;
 
 import com.irinatest.test.common.pageobjects.MainPageObject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ public class DeathServicePage extends MainPageObject {
     private final By dateOfDeathField = getById("TextInputField-12");
     private final By placeOfDeathField = getById("TextInputField-13");
 
+    @Step("Fill death date")
     public DeathServicePage fillDateOfDeath(LocalDate date) {
         DateTimeFormatter format = ofPattern("ddMMyyyy");
         element(dateOfDeathField).scrollIntoView(true)
@@ -23,18 +25,18 @@ public class DeathServicePage extends MainPageObject {
         return this;
     }
 
+    @Step("Fill death address")
     public DeathServicePage fillPlaceOfDeath(String place) {
         element(placeOfDeathField).shouldBe(visible).sendKeys(place);
 
         return this;
     }
 
+    @Step("Fill all fields")
     public DeathServicePage fillAllFields() {
         fillDateOfDeath(LocalDate.now().minusDays(3));
         fillPlaceOfDeath(randomAlphabetic(10));
 
         return this;
     }
-
-
 }

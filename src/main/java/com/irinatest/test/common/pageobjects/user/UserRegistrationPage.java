@@ -1,6 +1,7 @@
 package com.irinatest.test.common.pageobjects.user;
 
 import com.irinatest.test.common.pageobjects.MainPageObject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.enabled;
@@ -28,42 +29,49 @@ public class UserRegistrationPage extends MainPageObject {
         return this;
     }
 
+    @Step("Click next button")
     public ServicesPage clickNextButton() {
         element(nextButton).shouldBe(visible).click();
 
         return new ServicesPage();
     }
 
+    @Step("Fill last name")
     public UserRegistrationPage fillLastName(String lastname) {
         element(lastNameField).shouldBe(visible).sendKeys(lastname);
 
         return this;
     }
 
+    @Step("Fill name")
     public UserRegistrationPage fillName(String name) {
         element(nameField).shouldBe(visible).sendKeys(name);
 
         return this;
     }
 
+    @Step("Fill surname")
     public UserRegistrationPage fillSurname(String surname) {
         element(surNameField).shouldBe(visible).sendKeys(surname);
 
         return this;
     }
 
+    @Step("Fill phone number")
     public UserRegistrationPage fillPhone(String phone) {
         element(phoneField).shouldBe(visible).sendKeys(phone);
 
         return this;
     }
 
+    @Step("Fill number of passport")
     public UserRegistrationPage fillPassport(String passport) {
         element(passportField).shouldBe(visible).sendKeys(passport);
 
         return this;
     }
 
+    @Step("Fill all fields")
     public UserRegistrationPage fillAllFields() {
         fillLastName(randomAlphabetic(10));
         fillName(randomAlphabetic(10));

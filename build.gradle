@@ -1,7 +1,9 @@
 plugins {
 	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'io.qameta.allure' version '2.9.6'
 	id 'java'
+	id "com.github.spotbugs" version "5.0.7"
 }
 
 group = 'com.irinatest'
@@ -19,15 +21,31 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'com.codeborne:selenide:6.5.1'
 	testImplementation 'com.codeborne:selenide:6.5.1'
-	implementation("org.testng:testng:7.6.0")
-	testImplementation("org.testng:testng:7.6.0")
-	//compile group: 'io.qameta.allure', name: 'allure-selenide', version: '2.0-BETA22'
+	testImplementation 'org.testng:testng:7.6.0'
+	implementation 'org.testng:testng:7.6.0'
+
+	testImplementation 'io.qameta.allure:allure-testng:2.18.1'
+	testImplementation 'io.qameta.allure:allure-commandline:2.18.1'
+	testImplementation 'io.qameta.allure:allure-assertj:2.18.1'
+	testImplementation 'io.qameta.allure:allure-rest-assured:2.18.1'
+	testImplementation 'io.qameta.allure:allure-java-commons:2.18.1'
+	testImplementation 'io.qameta.allure:allure-selenide:2.18.1'
+	implementation 'io.qameta.allure:allure-selenide:2.18.1'
+	runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1' //or testimpl
+
+//	runtimeOnly 'org.postgresql:postgresql'
+//	implementation 'org.postgresql:postgresql:42.3.6'
+//	implementation 'org.jdbi:jdbi3-sqlobject:3.30.0'
+//	implementation 'org.jdbi:jdbi:2.78'
+
+
 }
+
 
 test {
 	useTestNG()

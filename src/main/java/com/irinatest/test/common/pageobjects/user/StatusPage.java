@@ -1,6 +1,7 @@
 package com.irinatest.test.common.pageobjects.user;
 
 import com.irinatest.test.common.pageobjects.MainPageObject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.enabled;
@@ -17,6 +18,7 @@ public class StatusPage extends MainPageObject {
     private final By reloadStatusButton = getByText("Обновить");
     private final By createNewRequestButton = getByText("Создать новую заявку");
 
+    @Step("Validate elements of page")
     public StatusPage validate() {
         element(serviceInfo).shouldBe(visible);
         element(thankYouText).shouldBe(visible);
@@ -29,17 +31,20 @@ public class StatusPage extends MainPageObject {
         return this;
     }
 
+    @Step("Get selected request type")
     public String getServiceInfo() {
         String textOfService = element(serviceInfo).shouldBe(visible).getText();
         return textOfService.substring(19);
     }
 
+    @Step("Get current status of request")
     public String getStatusInfo() {
         String textOfService = element(statusOfRequest).shouldBe(visible).getText();
-        System.out.println(textOfService);
+
         return textOfService.substring(15);
     }
 
+    @Step("Get date of request creating")
     public String getDateOfRequestInfo() {
         String textOfService = element(dateOfRequestText).shouldBe(visible).getText();
         return textOfService.substring(25);

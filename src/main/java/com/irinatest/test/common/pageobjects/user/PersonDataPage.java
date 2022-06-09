@@ -1,6 +1,7 @@
 package com.irinatest.test.common.pageobjects.user;
 
 import com.irinatest.test.common.pageobjects.MainPageObject;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.time.LocalDate;
@@ -23,24 +24,28 @@ public class PersonDataPage extends MainPageObject {
     private final By genderField = getById("TextInputField-11");
 
 
+    @Step("Fill lastname")
     public PersonDataPage fillLastName(String lastname) {
         element(lastNameField).shouldBe(visible).sendKeys(lastname);
 
         return this;
     }
 
+    @Step("Fill name")
     public PersonDataPage fillName(String name) {
         element(nameField).shouldBe(visible).sendKeys(name);
 
         return this;
     }
 
+    @Step("Fill surname")
     public PersonDataPage fillSurname(String surname) {
         element(surnameField).shouldBe(visible).sendKeys(surname);
 
         return this;
     }
 
+    @Step("Fill date of birth")
     public PersonDataPage fillDateOfBirth(LocalDate date) {
         DateTimeFormatter format = ofPattern("ddMMyyyy");
         element(dateOfBirthField).shouldBe(visible).sendKeys(date.format(format));
@@ -48,18 +53,21 @@ public class PersonDataPage extends MainPageObject {
         return this;
     }
 
+    @Step("Fill number of passport")
     public PersonDataPage fillPassport(String passport) {
         element(passportField).shouldBe(visible).sendKeys(passport);
 
         return this;
     }
 
+    @Step("Fill user gender")
     public PersonDataPage fillGender(String gender) {
         element(genderField).shouldBe(visible).sendKeys(gender);
 
         return this;
     }
 
+    @Step("Fill all fields")
     public PersonDataPage fillAllFields() {
         fillLastName(randomAlphabetic(10));
         fillName(randomAlphabetic(10));
@@ -71,6 +79,7 @@ public class PersonDataPage extends MainPageObject {
         return this;
     }
 
+    @Step("Click button for the open details of service")
     public void clickNextButton() {
         element(nextButton).shouldBe(visible).click();
     }
