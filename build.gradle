@@ -38,10 +38,10 @@ dependencies {
 	implementation 'io.qameta.allure:allure-selenide:2.18.1'
 	runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1' //or testimpl
 
-//	runtimeOnly 'org.postgresql:postgresql'
-//	implementation 'org.postgresql:postgresql:42.3.6'
-//	implementation 'org.jdbi:jdbi3-sqlobject:3.30.0'
-//	implementation 'org.jdbi:jdbi:2.78'
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.postgresql:postgresql:42.3.6'
+	implementation 'org.jdbi:jdbi3-sqlobject:3.30.0'
+	implementation 'org.jdbi:jdbi:2.78'
 
 
 }

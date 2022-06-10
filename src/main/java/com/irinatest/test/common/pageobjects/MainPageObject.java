@@ -30,7 +30,6 @@ public class MainPageObject extends BasePage {
     @Step("Open interface for admin")
     public void loginByAdmin() {
         element(adminLoginButton).shouldBe(visible).click();
-        //return new FirstUserRegistrationPage();
     }
 
     @Step("Check availability for the next button")

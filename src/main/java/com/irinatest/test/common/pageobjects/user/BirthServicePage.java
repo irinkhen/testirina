@@ -1,6 +1,5 @@
 package com.irinatest.test.common.pageobjects.user;
 
-import com.codeborne.selenide.Condition;
 import com.irinatest.test.common.pageobjects.MainPageObject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;

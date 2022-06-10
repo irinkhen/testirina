@@ -1,17 +1,12 @@
 package com.irinatest.test.config.allure;
 
 import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import org.testng.annotations.AfterMethod;
-
-import java.io.File;
-import java.io.IOException;
 
 @Slf4j
 public class TestListener extends TestListenerAdapter {
@@ -50,12 +45,12 @@ public class TestListener extends TestListenerAdapter {
         return ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-//    @AfterMethod
-//    public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
-//        if (testResult.getStatus() == ITestResult.FAILURE) {
-//            File scrFile = ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.FILE);
-////            FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + testResult.getName() + "-"
-////                    + Arrays.toString(testResult.getParameters()) +  ".jpg"));
-//        }
-//    }
+/*    @AfterMethod
+    public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            File scrFile = ((TakesScreenshot) WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + testResult.getName() + "-"
+                    + Arrays.toString(testResult.getParameters()) +  ".jpg"));
+        }
+    }*/
 }
