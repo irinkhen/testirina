@@ -1,4 +1,4 @@
-package com.irinatest.test.ui.suites;
+package com.irinatest.test.suites;
 public abstract class BaseSuite {
 
 

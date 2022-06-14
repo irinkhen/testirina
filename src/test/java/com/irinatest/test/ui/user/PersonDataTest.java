@@ -1,8 +1,8 @@
 package com.irinatest.test.ui.user;
 
-import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
-import com.irinatest.test.common.pageobjects.user.ServicesPage;
 import com.irinatest.test.common.pageobjects.user.PersonDataPage;
+import com.irinatest.test.common.pageobjects.user.ServicesPage;
+import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

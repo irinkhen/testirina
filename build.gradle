@@ -24,8 +24,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'com.codeborne:selenide:6.5.1'
-	testImplementation 'com.codeborne:selenide:6.5.1'
+	implementation 'com.codeborne:selenide:6.6.1'
+	testImplementation 'com.codeborne:selenide:6.6.1'
 	testImplementation 'org.testng:testng:7.6.0'
 	implementation 'org.testng:testng:7.6.0'
 
@@ -37,6 +37,8 @@ dependencies {
 	testImplementation 'io.qameta.allure:allure-selenide:2.18.1'
 	implementation 'io.qameta.allure:allure-selenide:2.18.1'
 	runtimeOnly 'org.aspectj:aspectjweaver:1.9.9.1' //or testimpl
+	testImplementation 'io.rest-assured:rest-assured:4.5.1'
+	implementation 'io.rest-assured:rest-assured:4.5.1'
 
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.postgresql:postgresql:42.3.6'

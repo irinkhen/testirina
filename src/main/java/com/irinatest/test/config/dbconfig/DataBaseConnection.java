@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DataBaseConnection extends Configs {
     Connection dbConnection;
@@ -16,7 +17,6 @@ public class DataBaseConnection extends Configs {
                 .append(dbPort).append("/")
                 .append(dbName)
                 .toString();
-        Class.forName("org.postgresql.Driver");
 
         dbConnection = DriverManager.getConnection(connection, dbUser, dbPassword);
         return dbConnection;
@@ -31,26 +31,26 @@ public class DataBaseConnection extends Configs {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
-            try {
-                dbConnection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            closeConnection();
         }
         return result;
     }
 
     public void deleteRow(String query) {
-        try (Connection resultSet = getDBConnection()) {
-            resultSet.createStatement().executeUpdate(query);
+        try (Statement resultSet = getDBConnection().createStatement()) {
+            resultSet.executeUpdate(query);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
-            try {
-                dbConnection.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            closeConnection();
+        }
+    }
+
+    public void closeConnection() {
+        try {
+            dbConnection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

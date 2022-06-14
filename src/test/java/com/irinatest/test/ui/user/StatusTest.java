@@ -46,11 +46,12 @@ public class StatusTest {
     @AfterClass
     public void after() {
         Integer userId = Integer.valueOf(registerDB.getCitizenIdByPassport(passport));
-        Integer applicantId = Integer.valueOf(registerDB.getApplicationIdByCitizenId(userId));
+        Integer applicationId = Integer.valueOf(registerDB.getApplicationIdByCitizenId(userId));
+        System.out.println(passport);
         System.out.println(userId);
-        System.out.println(applicantId);
+        System.out.println(applicationId);
 
-        registerDB.deleteDeathCertificatesById(applicantId);
+        registerDB.deleteDeathCertificatesById(userId);
         registerDB.deleteApplicationsByCitizenId(userId);
         registerDB.deleteApplicantByPassport(passport);
         registerDB.deleteCitizenById(userId);

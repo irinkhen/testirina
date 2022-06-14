@@ -1,5 +1,6 @@
 package com.irinatest.test.common.pageobjects;
 
+import com.irinatest.test.common.pageobjects.admin.AdminRegistrationPage;
 import com.irinatest.test.common.pageobjects.user.StatusPage;
 import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
 import com.irinatest.test.common.utils.BasePage;
@@ -13,13 +14,21 @@ import static com.codeborne.selenide.Selenide.element;
 public class MainPageObject extends BasePage {
 
     /** Navigation buttons */
-    public final By nextButton = getByText("Далее");
-    private final By closeButton = getByText("Закрыть");
-    private final By userLoginButton = getByText("Войти как пользователь");
-    private final By adminLoginButton = getByText("Войти как администратор");
+    protected final By nextButton = getByText("Далее");
+    protected final By closeButton = getByText("Закрыть");
+    protected final By userLoginButton = getByText("Войти как пользователь");
+    protected final By adminLoginButton = getByText("Войти как администратор");
+
+    /** Fields for the person */
+    protected final By lastNameField = getById("TextInputField-1");
+    protected final By nameField = getById("TextInputField-2");
+    protected final By surNameField = getById("TextInputField-3");
+    protected final By phoneField = getById("TextInputField-4");
+    protected final By passportField = getById("TextInputField-5");
+    protected final By dateOfBirthField = getById("TextInputField-6");
 
     /** Final button */
-    private final By finalButton = getByText("Завершить");
+    protected final By finalButton = getByText("Завершить");
 
     @Step("Open interface for user")
     public UserRegistrationPage loginByUser() {
@@ -28,8 +37,9 @@ public class MainPageObject extends BasePage {
     }
 
     @Step("Open interface for admin")
-    public void loginByAdmin() {
+    public AdminRegistrationPage loginByAdmin() {
         element(adminLoginButton).shouldBe(visible).click();
+        return new AdminRegistrationPage();
     }
 
     @Step("Check availability for the next button")
