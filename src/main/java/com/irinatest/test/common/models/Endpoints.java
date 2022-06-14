@@ -2,7 +2,7 @@ package com.irinatest.test.common.models;
 
 public enum Endpoints {
     CREATE_USER("/sendUserRequest"),
-    APPLICATION_STATUS("getApplStatus/{applicationId}"),
+    APPLICATION_STATUS("/getApplStatus/"),
     APPLICATION("/getApplications"),
     CREATE_ADMIN("/sendAdminRequest"),
     REQUEST_PROCESS("/requestProcess");

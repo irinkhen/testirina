@@ -1,8 +1,16 @@
 package com.irinatest.test.common.models.response;
 
-import lombok.Builder;
+import lombok.Data;
 
-@Builder
+import java.util.UUID;
+
+@Data
 public class CreateAdminResponse {
-    Integer staffid;
+    DataRequest data;
+    UUID requestId;
+
+    @Data
+    public static class DataRequest {
+        Integer staffid;
+    }
 }

@@ -131,6 +131,7 @@ public class AcceptApplicationsTest {
         assertEquals(applicationStatus, PROGRESS.getStatus());
 
         applicationsPage.declineApplication(applicationId);
+        applicationsPage.waitNewStatus(applicationId, REJECT.getStatus());
         String newApplicationStatus = applicationsPage.getApplicationStatus(applicationId);
         String applicationStatusFromBD = registerDB.getApplicationStatus(applicationId);
 

@@ -15,8 +15,8 @@ import org.testng.annotations.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.irinatest.test.common.models.RequestStatus.IN_PROGRESS;
 import static com.irinatest.test.common.models.ServiceName.DEATH;
+import static com.irinatest.test.common.models.UserApplicationStatus.IN_PROGRESS;
 import static java.time.format.DateTimeFormatter.ofPattern;
 import static java.util.Locale.US;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;

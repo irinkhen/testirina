@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Req" verbose="1" parallel="classes" thread-count="1">
+    <test name="API tests">
+        <classes>
+            <class name="com.irinatest.test.api.ApplicationsTest"/>
+            <class name="com.irinatest.test.api.CreateUserTest"/>
+            <class name="com.irinatest.test.api.CreateAdminTest"/>
+        </classes>
+    </test>
+
+</suite>

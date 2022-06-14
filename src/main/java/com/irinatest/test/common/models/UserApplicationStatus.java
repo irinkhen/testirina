@@ -1,13 +1,13 @@
 package com.irinatest.test.common.models;
 
-public enum RequestStatus {
+public enum UserApplicationStatus {
     IN_PROGRESS("На рассмотрении."),
     ACCEPTED("Подтверждена."),
     REJECTED("Отклонена.");
 
     private final String status;
 
-    RequestStatus(String status) {
+    UserApplicationStatus(String status) {
         this.status = status;
     }
 

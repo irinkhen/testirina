@@ -4,11 +4,9 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Builder
+@Getter
 public class ApplicationProcessRequest {
-    @Getter
     Integer applId;
-    @Getter
     Integer staffid;
-    @Getter
     String action;
 }

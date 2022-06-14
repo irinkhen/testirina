@@ -1,6 +1,5 @@
 package com.irinatest.test.common.requests;
 
-import com.irinatest.test.common.models.response.ApplicationProcessResponse;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
@@ -15,19 +14,15 @@ public class ApplicationRequests {
     public ValidatableResponse getApplicationStatus(String applicationId) {
         return given()
                 .auth().preemptive().basic("user", "senlatest")
-                .pathParam("{applicationId}", applicationId)
-                .get(buildUrl(APPLICATION_STATUS))
+                .get(buildUrl(APPLICATION_STATUS) + applicationId)
                 .then();
     }
 
     @Step("Get all applications list")
-    public ApplicationProcessResponse[] getAllApplications() {
+    public ValidatableResponse getAllApplications() {
         return given()
                 .auth().preemptive().basic("user", "senlatest")
                 .get(buildUrl(APPLICATION))
-                .then()
-                .statusCode(200)
-                .extract().body()
-                .as(ApplicationProcessResponse[].class);
+                .then();
     }
 }

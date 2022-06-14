@@ -3,7 +3,7 @@ package com.irinatest.test.common.models;
 public enum AdminStatusApplication {
     ACCEPT("Одобрена"),
     PROGRESS("На рассмотрении"),
-    REJECT("На рассмотрении");
+    REJECT("Отклонена");
 
     private final String status;
 

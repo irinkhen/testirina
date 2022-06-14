@@ -5,8 +5,8 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public class ApplicationProcessResponse {
-    DataRequest data;
+public class GetAllApplicationResponse {
+    DataRequest[] data;
     UUID requestId;
 
     @Data

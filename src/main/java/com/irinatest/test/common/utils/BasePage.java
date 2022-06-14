@@ -19,4 +19,25 @@ public class BasePage {
     public By getById(String id) {
         return id(id);
     }
+
+    public By getFollowingSiblingButton(Integer id, Integer position) {
+        return xpath(new StringBuilder()
+                .append("//*[contains(text(), '")
+                .append(id)
+                .append("')]/following-sibling::td/div/button[")
+                .append(position)
+                .append("]")
+                .toString());
+    }
+
+    public By getFollowingSibling(Integer id, Integer position) {
+        return xpath(new StringBuilder()
+                .append("//*[contains(text(), '")
+                .append(id)
+                .append("')]/following-sibling::td[")
+                .append(position)
+                .append("]")
+                .toString());
+    }
+
 }

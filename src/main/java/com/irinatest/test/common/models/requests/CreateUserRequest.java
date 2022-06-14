@@ -1,6 +1,6 @@
 package com.irinatest.test.common.models.requests;
 
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -25,42 +25,16 @@ public class CreateUserRequest {
     String anotherPersonFirstName;
     String anotherPersonMiddleName;
     @JsonProperty("birth_of_anotoherPerson")
-    String birth_of_anotoherPerson;
+    String birthOfAnotoherPerson;
     String anotherPersonPassport;
     @JsonProperty("birth_place")
-    String birth_place;
+    String birthPlace;
     @JsonProperty("birth_mother")
-    String birth_mother;
+    String birthMother;
     @JsonProperty("birth_father")
-    String birth_father;
+    String birthFather;
     @JsonProperty("death_dateOfDeath")
-    String death_dateOfDeath;
+    String deathDateOfDeath;
     @JsonProperty("death_placeOfDeath")
-    String death_placeOfDeath;
+    String deathPlaceOfDeath;
 }
-/*{
-    "mode": "birth",
-    "personalLastName": "mmm,m,,m",
-    "personalFirstName": "fwrfre",
-    "personalMiddleName": "kkkllk",
-    "personalPhoneNumber": "098765432",
-    "personalNumberOfPassport": "234567890",
-    "citizenLastName": "hjvc",
-    "citizenFirstName": "nmbv",
-    "citizenMiddleName": "vbnm",
-    "citizenBirthDate": "0456-03-12",
-    "citizenNumberOfPassport": "098765432",
-    "citizenGender": "m",
-    "dateOfMarriage": null,
-    "newLastName": null,
-    "anotherPersonLastName": null,
-    "anotherPersonFirstName": null,
-    "anotherPersonMiddleName": null,
-    "birth_of_anotoherPerson": null,
-    "anotherPersonPassport": null,
-    "birth_place": "kljhgfd",
-    "birth_mother": "ыпаыап",
-    "birth_father": "dscdcsdc",
-    "death_dateOfDeath": null,
-    "death_placeOfDeath": null
-}*/

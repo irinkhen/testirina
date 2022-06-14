@@ -1,16 +1,17 @@
 package com.irinatest.test.common.models.response;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
-@Builder
+@Data
 public class GetApplicationStatusResponse {
-    @Getter
-    Integer applicantid;
-    @Getter
-    Integer dateofapplication;
-    @Getter
-    Integer kindofapplication;
-    @Getter
-    Integer statusofapplication;
+    DataRequest data;
+    String requestId;
+    @Data
+    public static class DataRequest {
+        Integer applicantid;
+        String dateofapplication;
+        String kindofapplication;
+        String channel;
+        String statusofapplication;
+    }
 }
