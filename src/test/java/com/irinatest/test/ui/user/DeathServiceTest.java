@@ -4,12 +4,13 @@ import com.irinatest.test.common.pageobjects.user.DeathServicePage;
 import com.irinatest.test.common.pageobjects.user.PersonDataPage;
 import com.irinatest.test.common.pageobjects.user.ServicesPage;
 import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
+import com.irinatest.test.suites.UISuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class DeathServiceTest {
+public class DeathServiceTest extends UISuite {
     private UserRegistrationPage registrationPage = new UserRegistrationPage();
     private ServicesPage servicesPage = new ServicesPage();
     private PersonDataPage personDataPage = new PersonDataPage();

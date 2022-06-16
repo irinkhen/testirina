@@ -9,6 +9,9 @@ import java.time.format.DateTimeFormatter;
 
 import static com.irinatest.test.common.models.Endpoints.CREATE_USER;
 import static com.irinatest.test.common.models.Endpoints.buildUrl;
+import static com.irinatest.test.common.models.RequestType.BIRTH;
+import static com.irinatest.test.common.models.RequestType.DEATH;
+import static com.irinatest.test.common.models.RequestType.MARRIAGE;
 import static io.restassured.RestAssured.given;
 import static java.time.format.DateTimeFormatter.ofPattern;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
@@ -16,6 +19,8 @@ import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 
 
 public class UserRequests {
+
+    private DateTimeFormatter format = ofPattern("yyyy-MM-dd");
 
     @Step("Create user request")
     public ValidatableResponse createUser(CreateUserRequest requestBody) {
@@ -31,10 +36,8 @@ public class UserRequests {
 
     @Step("Create user for the marriage")
     public ValidatableResponse createUserForTheMarriage(LocalDate date, String passport) {
-        DateTimeFormatter format = ofPattern("yyyy-MM-dd");
-
         CreateUserRequest body = CreateUserRequest.builder()
-                .mode("wedding")
+                .mode(MARRIAGE.getType())
                 .personalFirstName(randomAlphabetic(10))
                 .personalLastName(randomAlphabetic(10))
                 .personalMiddleName(randomAlphabetic(10))
@@ -60,10 +63,8 @@ public class UserRequests {
 
     @Step("Create user for the birth")
     public ValidatableResponse createUserForTheBirth(LocalDate date) {
-        DateTimeFormatter format = ofPattern("yyyy-MM-dd");
-
         CreateUserRequest body = CreateUserRequest.builder()
-                .mode("birth")
+                .mode(BIRTH.getType())
                 .personalFirstName(randomAlphabetic(10))
                 .personalLastName(randomAlphabetic(10))
                 .personalMiddleName(randomAlphabetic(10))
@@ -85,10 +86,8 @@ public class UserRequests {
 
     @Step("Create user for the death")
     public ValidatableResponse createUserForTheDeath(LocalDate date) {
-        DateTimeFormatter format = ofPattern("yyyy-MM-dd");
-
         CreateUserRequest body = CreateUserRequest.builder()
-                .mode("death")
+                .mode(DEATH.getType())
                 .personalFirstName(randomAlphabetic(10))
                 .personalLastName(randomAlphabetic(10))
                 .personalMiddleName(randomAlphabetic(10))

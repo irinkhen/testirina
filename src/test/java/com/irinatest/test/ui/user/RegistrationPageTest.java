@@ -1,5 +1,6 @@
 package com.irinatest.test.ui.user;
 import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
+import com.irinatest.test.suites.UISuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -8,8 +9,8 @@ import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class RegistrationPageTest {
-    private UserRegistrationPage registrationPage = new UserRegistrationPage();
+public class RegistrationPageTest extends UISuite {
+    private final UserRegistrationPage registrationPage = new UserRegistrationPage();
 
     @BeforeMethod
     public void init() {

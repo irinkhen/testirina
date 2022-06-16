@@ -9,6 +9,7 @@ import com.irinatest.test.common.pageobjects.user.ServicesPage;
 import com.irinatest.test.common.pageobjects.user.StatusPage;
 import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
 import com.irinatest.test.config.dbconfig.DBUserHelper;
+import com.irinatest.test.suites.UISuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,7 @@ import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertEquals;
 
-public class AcceptApplicationsTest {
+public class AcceptApplicationsTest extends UISuite {
     private AdminRegistrationPage registrationAdminPage = new AdminRegistrationPage();
     private ApplicationsPage applicationsPage = new ApplicationsPage();
     private UserRegistrationPage registrationUserPage = new UserRegistrationPage();

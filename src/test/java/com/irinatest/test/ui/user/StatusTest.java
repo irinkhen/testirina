@@ -7,6 +7,7 @@ import com.irinatest.test.common.pageobjects.user.StatusPage;
 import com.irinatest.test.common.pageobjects.user.UserRegistrationPage;
 import com.irinatest.test.config.allure.TestListener;
 import com.irinatest.test.config.dbconfig.DBUserHelper;
+import com.irinatest.test.suites.UISuite;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -24,7 +25,7 @@ import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertEquals;
 
 @Listeners(TestListener.class)
-public class StatusTest {
+public class StatusTest extends UISuite {
     private UserRegistrationPage registrationPage = new UserRegistrationPage();
     private ServicesPage servicesPage = new ServicesPage();
     private PersonDataPage personDataPage = new PersonDataPage();

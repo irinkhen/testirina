@@ -1,12 +1,13 @@
 package com.irinatest.test.ui.admin;
 
 import com.irinatest.test.common.pageobjects.admin.AdminRegistrationPage;
+import com.irinatest.test.suites.UISuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class RegistrationAdminTest {
+public class RegistrationAdminTest extends UISuite {
     private AdminRegistrationPage registrationPage = new AdminRegistrationPage();
 
     @BeforeMethod
